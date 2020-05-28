@@ -1,0 +1,1 @@
+export { vailPassword } from './validate';
