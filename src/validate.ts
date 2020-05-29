@@ -16,8 +16,8 @@ interface vailPasswordResult {
   text: string;
 }
 /**
- *
  * @param params
+ * @returns
  */
 export function vailPassword(params: vailPasswordOption): vailPasswordResult {
   const { password, account } = params;
@@ -63,25 +63,41 @@ export function vailPassword(params: vailPasswordOption): vailPasswordResult {
   };
 }
 
-/* 合法uri*/
+/**
+ * @description 是否合法uri
+ * @param str
+ * @returns {boolean}
+ */
 export function validateURL(textval: string): boolean {
   const urlregex = /^(https?|ftp):\/\/([a-zA-Z0-9.-]+(:[a-zA-Z0-9.&%$-]+)*@)*((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}|([a-zA-Z0-9-]+\.)*[a-zA-Z0-9-]+\.(com|edu|gov|int|mil|net|org|biz|arpa|info|name|pro|aero|coop|museum|[a-zA-Z]{2}))(:[0-9]+)*(\/($|[a-zA-Z0-9.,?'\\+&%$#=~_-]+))*$/;
   return urlregex.test(textval);
 }
 
-/* 小写字母*/
+/**
+ * @description 小写字母
+ * @param str
+ * @returns {boolean}
+ */
 export function validateLowerCase(str: string): boolean {
   const reg = /^[a-z]+$/;
   return reg.test(str);
 }
 
-/* 大写字母*/
+/**
+ * @description 大写字母
+ * @param str
+ * @returns {boolean}
+ */
 export function validateUpperCase(str: string): boolean {
   const reg = /^[A-Z]+$/;
   return reg.test(str);
 }
 
-/* 大小写字母*/
+/**
+ * @description 大小写字母
+ * @param str
+ * @returns {boolean}
+ */
 export function validatAlphabets(str: string): boolean {
   const reg = /^[A-Za-z]+$/;
   return reg.test(str);
@@ -98,7 +114,7 @@ export function isDigital(str: string): boolean {
 }
 
 /**
- * validate email
+ * @description 判断是否为邮箱
  * @param email
  * @returns {boolean}
  */
@@ -118,10 +134,11 @@ export function isPhoneNumber(str: string): boolean {
   return reg.test(str);
 }
 
-/*
-  判断是否是 固定电话
-  @returns {boolean}
-*/
+/**
+ * @description 判断是否为固定电话
+ * @param str
+ * @returns {boolean}
+ */
 export function isTelephoneNumber(str: string): boolean {
   const reg = /^(0?(13[0-9]|15[012356789]|166|17[013678]|18[0-9]|14[57])[0-9]{8})|(400|800)([0-9\\-]{7,10})|(([0-9]{4}|[0-9]{3})(-| )?)?([0-9]{7,8})((-| |转)*([0-9]{1,4}))?$/;
   return reg.test(str);

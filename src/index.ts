@@ -1,1 +1,2 @@
-export { vailPassword } from './validate';
+// 验证模块
+export * from './validate';
