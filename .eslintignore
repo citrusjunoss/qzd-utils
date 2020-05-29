@@ -1,0 +1,4 @@
+jest.config.js
+lib
+docs
+node_modules

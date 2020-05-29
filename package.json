@@ -10,28 +10,38 @@
   "license": "MIT",
   "keywords": ["qizhidiao", "qzd"],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test-c": "jest --coverage",
+    "coveralls": "cat ./coverage/lcov.info | coveralls",
     "watch": "tsc -w && node lib/index.js",
     "start": "nodemon --config nodemon.json lib/index.js",
     "doc": "typedoc --out docs/tsdoc/ --excludePrivate",
     "deprecated": "tsc -w && node lib/index.js"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "lint-staged": {
     "src/*.{ts,tsx}": ["eslint", "prettier --single-quote --write", "git add"],
     "{*.json,.{babelrc,eslintrc,prettierrc,stylelintrc}}": [
       "prettier --parser json --write",
       "git add"
-    ],
-    "*.{yml,md}": ["prettier --single-quote --write", "git add"]
+    ]
   },
   "dependencies": {},
   "devDependencies": {
+    "@microsoft/tsdoc": "^0.12.20",
+    "@types/jest": "^25.2.3",
     "@typescript-eslint/eslint-plugin": "^3.0.2",
     "@typescript-eslint/parser": "^3.0.2",
+    "coveralls": "^3.1.0",
     "eslint": "^7.1.0",
     "husky": "^4.2.5",
+    "jest": "^26.0.1",
     "lint-staged": "^10.2.6",
     "prettier": "^2.0.5",
+    "ts-jest": "^26.0.0",
+    "typedoc-plugin-localization": "^2.2.1",
     "typescript": "^3.9.3"
   }
 }

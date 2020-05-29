@@ -1,5 +1,28 @@
+language: node_js
+
+node_js:
+  -8
+
 stages:
+  - build
+    if: branch = master
+  - test
   - publish
+    if: branch = master
+
+# 打包
+build:
+  stage: build
+  install: npm install
+  script: 
+    - npm run build
+# 测试
+test:
+  stage: test
+  script: 
+    - npm run test
+  after_success:
+    - npm run coveralls
 
 # 发布到npm
 publish:
@@ -10,3 +33,14 @@ publish:
     - your-runner-tag
   script:
     - docker run --name npm-publisher --rm -v $(pwd):/home/node/code --workdir="/home/node/code" --env NPM_TOKEN=${NPM_TOKEN} node:8-alpine sh publish.sh
+
+# branches:
+#   only:
+#     - master
+# install:
+#   - npm install
+# script:
+#   - npm test
+# after_success:
+#   - npm run coveralls
+
