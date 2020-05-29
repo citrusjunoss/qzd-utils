@@ -1,0 +1,12 @@
+stages:
+  - publish
+
+# 发布到npm
+publish:
+  stage: publish
+  only:
+    - tags
+  tags:
+    - your-runner-tag
+  script:
+    - docker run --name npm-publisher --rm -v $(pwd):/home/node/code --workdir="/home/node/code" --env NPM_TOKEN=${NPM_TOKEN} node:8-alpine sh publish.sh
