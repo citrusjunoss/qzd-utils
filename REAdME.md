@@ -1,5 +1,7 @@
 # 企知道 Web 通用工具函数
 
+[![Coverage Status](https://coveralls.io/repos/github/citrusjunoss/qzd-utils/badge.svg?branch=master)](https://coveralls.io/github/citrusjunoss/qzd-utils?branch=master)
+
 ### 安装
 
 ```js
