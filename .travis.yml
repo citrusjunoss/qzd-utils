@@ -4,6 +4,7 @@ node_js: 10
 
 stages:
   - test
+  - build
 
 # 打包
 build:
