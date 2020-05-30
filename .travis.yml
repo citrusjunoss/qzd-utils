@@ -2,42 +2,44 @@ language: node_js
 
 node_js: 10
 
+os:
+  - linux
+
 stages:
   - test
   - build
 
-# 打包
-build:
-  stage: build
-  install: npm install
-  script:
-    - npm run build
+   
+jobs:
+  include:
+    - stage: build
+      script:
+       - npm run build
 # 测试
-test:
-  stage: test
-  install: skip
-  script:
-    - npm run test
-    - npm run cover
-  after_success:
-    - npm run coveralls
+    -stage: test
+      install: skip
+      script:
+        - npm run test
+        - npm run cover
+      after_success:
+        - npm run coveralls
 
-# 发布到npm
-publish:
-  stage: publish
-  only:
-    - tags
-  tags:
-    - your-runner-tag
-  script:
-    - docker run --name npm-publisher --rm -v $(pwd):/home/node/code --workdir="/home/node/code" --env NPM_TOKEN=${NPM_TOKEN} node:8-alpine sh publish.sh
-# branches:
-#   only:
-#     - master
-# install:
-#   - npm install
-# script:
-#   - npm test
-# after_success:
-#   - npm run coveralls
+    # 发布到npm
+    -stage: publish
+      only:
+        - tags
+      tags:
+        - your-runner-tag
+      script:
+          - echo "NPM Deploying Started ..."
+          - npm version
+          - npm run build
+          - echo "NPM Building Finished."
+      publish:
+          provider: npm
+          email: chengjunchao@hotmail.com
+          api_key: "$NPM_TOKEN"
+          skip_cleanup: true
+          on:
+            all_branches: true
 
