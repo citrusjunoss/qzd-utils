@@ -24,3 +24,23 @@ export function isConsecutive(str: string, isReverse = true): boolean {
   }
   return flag;
 }
+
+export function accDiv(arg1: number, arg2: number): number {
+  let t1 = 0,
+    t2 = 0;
+  try {
+    t1 = arg1.toString().split('.')[1].length;
+  } catch (e) {
+    throw new Error(e);
+  }
+
+  try {
+    t2 = arg2.toString().split('.')[1].length;
+  } catch (e) {
+    throw new Error(e);
+  }
+
+  const r1 = Number(arg1.toString().replace('.', ''));
+  const r2 = Number(arg2.toString().replace('.', ''));
+  return (r1 / r2) * Math.pow(10, t2 - t1);
+}

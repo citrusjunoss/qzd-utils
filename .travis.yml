@@ -24,8 +24,7 @@ jobs:
       after_success:
         - npm run coveralls
 
-    # 发布到npm
-    -stage: publish
+publish:
       only:
         - tags
       tags:
@@ -35,11 +34,11 @@ jobs:
           - npm version
           - npm run build
           - echo "NPM Building Finished."
-      publish:
-          provider: npm
-          email: chengjunchao@hotmail.com
-          api_key: "$NPM_TOKEN"
-          skip_cleanup: true
-          on:
-            all_branches: true
+      # publish:
+      #     provider: npm
+      #     email: chengjunchao@hotmail.com
+      #     api_key: "$NPM_TOKEN"
+      #     skip_cleanup: true
+      #     on:
+      #       all_branches: true
 

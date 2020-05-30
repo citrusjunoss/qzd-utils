@@ -15,7 +15,7 @@
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "watch": "tsc -w && node lib/index.js",
     "start": "nodemon --config nodemon.json lib/index.js",
-    "doc": "typedoc --out docs/tsdoc/ --excludePrivate",
+    "doc": "typedoc --out docs --excludePrivate",
     "deprecated": "tsc -w && node lib/index.js"
   },
   "jest": {
