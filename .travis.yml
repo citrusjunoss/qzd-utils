@@ -18,7 +18,7 @@ test:
   install: skip
   script:
     - npm run test
-    - npm run test -c
+    - npm run cover
   after_success:
     - npm run coveralls
 
