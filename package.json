@@ -11,7 +11,7 @@
   "keywords": ["qizhidiao", "qzd"],
   "scripts": {
     "test": "jest",
-    "test-c": "jest --coverage",
+    "cover": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "watch": "tsc -w && node lib/index.js",
     "start": "nodemon --config nodemon.json lib/index.js",
