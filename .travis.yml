@@ -2,28 +2,31 @@ language: node_js
 
 node_js: 10
 
-os:
-  - linux
+language: node_js
+
+node_js: 10
 
 stages:
   - test
   - build
 
-   
-jobs:
-  include:
-    - stage: build
-      script:
-       - npm run build
+# 打包
+build:
+  stage: build
+  install: npm install
+  script:
+    - npm run build
+    - npm run doc
 # 测试
-    -stage: test
-      install: skip
-      script:
-        - npm run test
-        - npm run cover
-      after_success:
-        - npm run coveralls
-
+test:
+  stage: test
+  install: skip
+  script:
+    - npm run test
+    - npm run cover
+  after_success:
+    - npm run coveralls
+# 发布
 publish:
       only:
         - tags
