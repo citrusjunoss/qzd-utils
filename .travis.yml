@@ -43,7 +43,7 @@ deploy:
   skip_cleanup: true
   file: "$TRAVIS_BUILD_DIR/lib/index.js"
   api_key:
-    secure: "$API_KEY"
+    secure: "$GITHUB_TOKEN"
   on:
     tags: true #发布  tag版 时才进行发包   
     draft: false # 不发表drafs
