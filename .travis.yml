@@ -9,7 +9,7 @@ node_js: 10
 stages:
   - test
   - build
-
+  - deploy
 # 打包
 build:
   stage: build
@@ -37,6 +37,17 @@ publish:
           - npm version
           - npm run build
           - echo "NPM Building Finished."
+# release
+deploy:
+  provider: releases
+  skip_cleanup: true
+  file: "$TRAVIS_BUILD_DIR/lib/index.js"
+  api_key:
+    secure: "$API_KEY"
+  on:
+    tags: true #发布  tag版 时才进行发包   
+    draft: false # 不发表drafs
+          
       # publish:
       #     provider: npm
       #     email: chengjunchao@hotmail.com
