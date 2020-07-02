@@ -28,7 +28,11 @@
       "git add"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/js-md5": "^0.4.2",
+    "js-md5": "^0.7.3",
+    "js-sha1": "^0.6.0"
+  },
   "devDependencies": {
     "@microsoft/tsdoc": "^0.12.20",
     "@types/jest": "^25.2.3",
