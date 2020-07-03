@@ -64,7 +64,7 @@ export function vailPassword(params: vailPasswordOption): vailPasswordResult {
 }
 
 /**
- * @description 是否合法uri
+ * @name 是否合法uri
  * @param str
  * @returns {boolean}
  */
@@ -74,7 +74,7 @@ export function validateURL(textval: string): boolean {
 }
 
 /**
- * @description 小写字母
+ * @name 小写字母
  * @param str
  * @returns {boolean}
  */
@@ -84,7 +84,7 @@ export function validateLowerCase(str: string): boolean {
 }
 
 /**
- * @description 大写字母
+ * @name 大写字母
  * @param str
  * @returns {boolean}
  */
@@ -94,7 +94,7 @@ export function validateUpperCase(str: string): boolean {
 }
 
 /**
- * @description 大小写字母
+ * @name 大小写字母
  * @param str
  * @returns {boolean}
  */
@@ -104,7 +104,7 @@ export function validatAlphabets(str: string): boolean {
 }
 
 /**
- * @description 判断是否全为数字
+ * @name 判断是否全为数字
  * @param str
  * @returns {boolean}
  */
@@ -114,7 +114,7 @@ export function isDigital(str: string): boolean {
 }
 
 /**
- * @description 判断是否为邮箱
+ * @name 判断是否为邮箱
  * @param email
  * @returns {boolean}
  */
@@ -125,7 +125,7 @@ export function validateEmail(email: string): boolean {
 }
 
 /**
- * @description 判断是否为电话号码
+ * @name 判断是否为电话号码
  * @param str
  * @returns {boolean}
  */
@@ -135,11 +135,49 @@ export function isPhoneNumber(str: string): boolean {
 }
 
 /**
- * @description 判断是否为固定电话
+ * @name 判断是否为固定电话
  * @param str
  * @returns {boolean}
  */
 export function isTelephoneNumber(str: string): boolean {
   const reg = /^(0?(13[0-9]|15[012356789]|166|17[013678]|18[0-9]|14[57])[0-9]{8})|(400|800)([0-9\\-]{7,10})|(([0-9]{4}|[0-9]{3})(-| )?)?([0-9]{7,8})((-| |转)*([0-9]{1,4}))?$/;
   return reg.test(str);
+}
+
+/**
+ * @name 是否为QQ号
+ * @param qq
+ */
+export function isQQ(qq: string): boolean {
+  const qq_reg = new RegExp(/^[1-9][0-9]{4,}$/);
+  if (!qq_reg.test(qq)) {
+    return false;
+  }
+  return true;
+}
+
+/**
+ * @name 是否是身份证号码
+ * @param str 身份证号码
+ * @returns {boolean}
+ */
+export function isIDCard(str: string): boolean {
+  const IDCardReg = new RegExp(/(^\d{15}$)|(^\d{17}([0-9]|X)$)/);
+  if (!IDCardReg.test(str)) {
+    return false;
+  }
+  return true;
+}
+
+/**
+ * @name  数据为空(包含null,undefined,空字符)
+ * @param str
+ */
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export function isEmpty(str: any): boolean {
+  if (str == null || typeof str == 'undefined' || str.trim() == '') {
+    return true;
+  } else {
+    return false;
+  }
 }

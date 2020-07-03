@@ -1,6 +1,6 @@
 {
   "name": "qzd-utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "企知道通用工具类",
   "author": "citrus",
   "directories": {
@@ -11,11 +11,11 @@
   "keywords": ["qizhidiao", "qzd"],
   "scripts": {
     "test": "jest",
-    "test-c": "jest --coverage",
+    "cover": "jest --coverage",
     "coveralls": "cat ./coverage/lcov.info | coveralls",
     "watch": "tsc -w && node lib/index.js",
     "start": "nodemon --config nodemon.json lib/index.js",
-    "doc": "typedoc --out docs/tsdoc/ --excludePrivate",
+    "doc": "typedoc --out docs --excludePrivate",
     "deprecated": "tsc -w && node lib/index.js"
   },
   "jest": {
@@ -28,7 +28,11 @@
       "git add"
     ]
   },
-  "dependencies": {},
+  "dependencies": {
+    "@types/js-md5": "^0.4.2",
+    "js-md5": "^0.7.3",
+    "js-sha1": "^0.6.0"
+  },
   "devDependencies": {
     "@microsoft/tsdoc": "^0.12.20",
     "@types/jest": "^25.2.3",

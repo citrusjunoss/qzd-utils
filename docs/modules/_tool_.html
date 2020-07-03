@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>vailPasswordOption | qzd-utils</title>
+	<title>&quot;tool&quot; | qzd-utils</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -56,72 +56,99 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_validate_.html">&quot;validate&quot;</a>
-				</li>
-				<li>
-					<a href="_validate_.vailpasswordoption.html">vailPasswordOption</a>
+					<a href="_tool_.html">&quot;tool&quot;</a>
 				</li>
 			</ul>
-			<h1>Interface vailPasswordOption</h1>
+			<h1>External module &quot;tool&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-hierarchy">
-				<h3>Hierarchy</h3>
-				<ul class="tsd-hierarchy">
-					<li>
-						<span class="target">vailPasswordOption</span>
-					</li>
-				</ul>
-			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Properties</h3>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_validate_.vailpasswordoption.html#account" class="tsd-kind-icon">account</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_validate_.vailpasswordoption.html#password" class="tsd-kind-icon">password</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_tool_.html#getfileextension" class="tsd-kind-icon">get<wbr>File<wbr>Extension</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_tool_.html#getfilesize" class="tsd-kind-icon">getfilesize</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="account" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> account</h3>
-					<div class="tsd-signature tsd-kind-icon">account<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b902fc4/src/validate.ts#L7">validate.ts:7</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>用户名</p>
-						</div>
-					</div>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="getfileextension" class="tsd-anchor"></a>
+					<h3>get<wbr>File<wbr>Extension</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>File<wbr>Extension<span class="tsd-signature-symbol">(</span>filename<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/6b356b5/src/tool.ts#L9">tool.ts:9</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>name</dt>
+									<dd><p>获取文件扩展名</p>
+									</dd>
+									<dt>filename</dt>
+									<dd><p>文件名 需要带后缀</p>
+									</dd>
+									<dt>description</dt>
+									<dd><p>String.lastIndexOf() 方法返回指定值（本例中的&#39;.&#39;）在调用该方法的字符串中最后出现的位置，如果没找到则返回 -1。对于&#39;filename&#39;和&#39;.hiddenfile&#39;，lastIndexOf的返回值分别为0和-1无符号右移操作符(»&gt;) 将-1转换为4294967295，将-2转换为4294967294，这个方法可以保证边缘情况时文件名不变。 String.prototype.slice() 从上面计算的索引处提取文件的扩展名。如果索引比文件名的长度大，结果为&quot;&quot;。</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filename: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="password" class="tsd-anchor"></a>
-					<h3>password</h3>
-					<div class="tsd-signature tsd-kind-icon">password<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b902fc4/src/validate.ts#L5">validate.ts:5</a></li>
-						</ul>
-					</aside>
-					<div class="tsd-comment tsd-typography">
-						<div class="lead">
-							<p>密码字符串</p>
-						</div>
-					</div>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="getfilesize" class="tsd-anchor"></a>
+					<h3>getfilesize</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">getfilesize<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/6b356b5/src/tool.ts#L17">tool.ts:17</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>name</dt>
+									<dd><p>文件大小转换根据大小转换为不同的计量单位</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>size: <span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -132,62 +159,32 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_index_.html">"index"</a>
+						<a href="_filter_.html">&quot;filter&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="../modules/_utils_index_.html">"utils/index"</a>
+						<a href="_index_.html">&quot;index&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_signture_.html">&quot;signture&quot;</a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_validate_.html">"validate"</a>
+						<a href="_tool_.html">&quot;tool&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_utils_index_.html">&quot;utils/index&quot;</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_validate_.html">&quot;validate&quot;</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-				</ul>
-				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_validate_.vailpasswordoption.html" class="tsd-kind-icon">vail<wbr>Password<wbr>Option</a>
-						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_validate_.vailpasswordoption.html#account" class="tsd-kind-icon">account</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_validate_.vailpasswordoption.html#password" class="tsd-kind-icon">password</a>
-							</li>
-						</ul>
-					</li>
-				</ul>
-				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_validate_.vailpasswordresult.html" class="tsd-kind-icon">vail<wbr>Password<wbr>Result</a>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_tool_.html#getfileextension" class="tsd-kind-icon">get<wbr>File<wbr>Extension</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_validate_.html#isdigital" class="tsd-kind-icon">is<wbr>Digital</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_validate_.html#isphonenumber" class="tsd-kind-icon">is<wbr>Phone<wbr>Number</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_validate_.html#istelephonenumber" class="tsd-kind-icon">is<wbr>Telephone<wbr>Number</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_validate_.html#vailpassword" class="tsd-kind-icon">vail<wbr>Password</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_validate_.html#validatalphabets" class="tsd-kind-icon">validat<wbr>Alphabets</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_validate_.html#validateemail" class="tsd-kind-icon">validate<wbr>Email</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_validate_.html#validatelowercase" class="tsd-kind-icon">validate<wbr>Lower<wbr>Case</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_validate_.html#validateurl" class="tsd-kind-icon">validateURL</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_validate_.html#validateuppercase" class="tsd-kind-icon">validate<wbr>Upper<wbr>Case</a>
+						<a href="_tool_.html#getfilesize" class="tsd-kind-icon">getfilesize</a>
 					</li>
 				</ul>
 			</nav>
