@@ -3,6 +3,7 @@ import {
   isDigital,
   isPhoneNumber,
   isTelephoneNumber,
+  isEmpty,
 } from '../src/validate';
 
 describe('validate.test vailPassword', () => {
@@ -57,5 +58,14 @@ describe('validate.test isTelephoneNumber', () => {
   });
   test('isTelephoneNumber test not pass', () => {
     expect(isTelephoneNumber('121312sdf12')).toBe(false);
+  });
+});
+
+describe('validate.test isEmpty', () => {
+  test('isEmpty test pass', () => {
+    expect(isEmpty('')).toBe(true);
+  });
+  test('isEmpty test not pass', () => {
+    expect(isEmpty(0)).toBe(false);
   });
 });
