@@ -12,6 +12,8 @@ yarn add qzd-utils
 
 ### 使用
 
+[在线文档](https://citrusjunoss.github.io/qzd-utils/)
+
 ```js
 // 密码校验使用方法
 import { vailPassword } from 'qzd-utils';
