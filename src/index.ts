@@ -6,3 +6,5 @@ export * from './validate';
 export * from './signture';
 // 常用工具类 文件名 size处理
 export * from './tool';
+// 过滤器
+export * from './filter';
