@@ -99,3 +99,27 @@ export function toThousandsString(number: number | string): string {
 
   return result + '.' + decimal;
 }
+
+/**
+ * @description 隐藏手机号
+ * @param string
+ * @see 130 **** 3027
+ */
+export function hidePhone(phone: string) {
+  return phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
+}
+
+/**
+ * @description 隐藏昵称
+ * @param string
+ * @see 程珀尔塔 -> 程****塔 / 程 -> 程****  / ‘’ -> ****
+ */
+export function hideNickname(nickname: string) {
+  let res = nickname.replace(/^(.).*(.)$/, '$1***$2');
+  if (res.length === 1) {
+    res = `${res}****`;
+  } else if (res.length === 0) {
+    res = '****';
+  }
+  return res;
+}
