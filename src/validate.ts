@@ -175,7 +175,11 @@ export function isIDCard(str: string): boolean {
  */
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function isEmpty(str: any): boolean {
-  if (str == null || typeof str == 'undefined' || str.trim() == '') {
+  if (
+    str == null ||
+    typeof str == 'undefined' ||
+    (typeof str === 'string' && str.trim() == '')
+  ) {
     return true;
   } else {
     return false;

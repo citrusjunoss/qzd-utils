@@ -1,12 +1,13 @@
 {
   "name": "qzd-utils",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "企知道通用工具类",
   "author": "citrus",
   "directories": {
     "test": "test"
   },
   "main": "lib/index.js",
+  "homepage": "https://citrusjunoss.github.io/qzd-utils",
   "license": "MIT",
   "keywords": ["qizhidiao", "qzd"],
   "scripts": {
