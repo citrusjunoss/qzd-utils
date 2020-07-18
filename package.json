@@ -14,7 +14,7 @@
   },
   "license": "MIT",
   "keywords": ["qizhidiao", "qzd", "utils"],
-  "files": ["src", "lib/*.js", "typings/*.d.ts"],
+  "files": ["src", "lib", "typings/*.d.ts"],
   "scripts": {
     "test": "jest",
     "cover": "jest --coverage",
