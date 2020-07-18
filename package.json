@@ -1,6 +1,6 @@
 {
   "name": "qzd-utils",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "企知道通用工具类",
   "author": "citrus",
   "directories": {
@@ -14,7 +14,7 @@
   },
   "license": "MIT",
   "keywords": ["qizhidiao", "qzd", "utils"],
-  "files": ["src", "lib", "typings/*.d.ts"],
+  "files": ["lib", "typings/*.d.ts"],
   "scripts": {
     "test": "jest",
     "cover": "jest --coverage",
