@@ -8,3 +8,5 @@ export * from './signture';
 export * from './tool';
 // 过滤器
 export * from './filter';
+// 浏览器环境
+export * from './env';
