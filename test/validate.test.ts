@@ -50,6 +50,9 @@ describe('validate.test isPhoneNumber', () => {
   test('isPhoneNumber test not pass', () => {
     expect(isPhoneNumber('121312sdf12')).toBe(false);
   });
+  test('isPhoneNumber test new phone code', () => {
+    expect(isPhoneNumber('17043763147')).toBe(true);
+  });
 });
 
 describe('validate.test isTelephoneNumber', () => {

@@ -130,7 +130,7 @@ export function validateEmail(email: string): boolean {
  * @returns {boolean}
  */
 export function isPhoneNumber(str: string): boolean {
-  const reg = /^0?(13[0-9]|15[012356789]|166|17[013678]|18[0-9]|14[57])[0-9]{8}$/;
+  const reg = /^1\d{10}$/;
   return reg.test(str);
 }
 
