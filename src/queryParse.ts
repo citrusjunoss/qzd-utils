@@ -52,3 +52,51 @@ export function isTypes(params: any, types: string | string[]) {
     );
   }
 }
+
+function decode(s: string) {
+  return s.replace(/(%[0-9A-Z]{2})+/g, decodeURIComponent);
+}
+
+export function parseCookies(
+  key: string,
+  json?: boolean,
+  customCookies?: string,
+): string | undefined {
+  if (typeof document === 'undefined' && customCookies) {
+    return;
+  }
+  const cookiesStr = customCookies ? customCookies : document.cookie;
+  const cookies = cookiesStr ? cookiesStr.split('; ') : [];
+  const jar: any = {};
+
+  for (let i = 0; i < cookies.length; i++) {
+    const parts = cookies[i].split('=');
+    let cookie = parts.slice(1).join('=');
+
+    if (!json && cookie.charAt(0) === '"') {
+      cookie = cookie.slice(1, -1);
+    }
+
+    try {
+      const name = decode(parts[0]);
+      cookie = decode(cookie);
+
+      if (json) {
+        try {
+          cookie = JSON.parse(cookie);
+        } catch (e) {
+          console.error(e);
+        }
+      }
+
+      jar[name] = cookie;
+
+      if (key === name) {
+        break;
+      }
+    } catch (e) {
+      console.error(e);
+    }
+  }
+  return key ? jar[key] : jar;
+}
