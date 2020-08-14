@@ -61,12 +61,14 @@ export function parseCookies(
   key: string,
   json?: boolean,
   customCookies?: string,
+  standard?: boolean,
 ): string | undefined {
   if (typeof document === 'undefined' && customCookies) {
     return;
   }
+  const cookiesSplite = standard ? '; ' : ';';
   const cookiesStr = customCookies ? customCookies : document.cookie;
-  const cookies = cookiesStr ? cookiesStr.split('; ') : [];
+  const cookies = cookiesStr ? cookiesStr.split(cookiesSplite) : [];
   const jar: any = {};
 
   for (let i = 0; i < cookies.length; i++) {
