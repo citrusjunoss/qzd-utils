@@ -19,7 +19,8 @@ type browserType =
   | 'webview'
   | 'Symbian'
   | 'ucSB'
-  | 'qzd';
+  | 'qzd'
+  | 'huaWei';
 
 function isUcWeb(ua: string): boolean {
   try {
@@ -67,6 +68,7 @@ function allEnv(): {
     Symbian: ua.indexOf('Symbian') > -1,
     ucSB: ua.indexOf('Firofox/1.') > -1,
     qzd: ua.indexOf('QZDVName') > -1,
+    huaWei: ua.indexOf('HUAWEI') > -1,
   };
 }
 
