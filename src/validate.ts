@@ -130,7 +130,7 @@ export function validateEmail(email: string): boolean {
  * @returns {boolean}
  */
 export function isPhoneNumber(str: string): boolean {
-  const reg = /^0?(13[0-9]|15[012356789]|166|17[013678]|18[0-9]|14[57])[0-9]{8}$/;
+  const reg = /^1\d{10}$/;
   return reg.test(str);
 }
 
@@ -184,4 +184,34 @@ export function isEmpty(str: any): boolean {
   } else {
     return false;
   }
+}
+/**
+ * @name  数据为空(包含null,undefined,空字符)
+ * @param str
+ */
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export function isEmptyObj(obj: any): boolean {
+  if (!obj) return false;
+  return !!Object.keys(obj).length;
+}
+
+/**
+ *
+ * @param {*} str 检测字符串
+ * @param {*} num 几位数 默认 2
+ * @param {*} count 几位小数 默认1
+ */
+export function isFlotNum(str: string, num = 2, count = 1): boolean {
+  return new RegExp(`^\\d{0,${num}}([\\b]*|\\.|\\.\\d{0,${count}}|$)$`).test(
+    str,
+  );
+}
+
+/**
+ * 是否正整数
+ * @param {*} num
+ */
+export function isPINum(num: string): boolean {
+  const result = /^\+?[1-9][0-9]*$/.test(num);
+  return result;
 }

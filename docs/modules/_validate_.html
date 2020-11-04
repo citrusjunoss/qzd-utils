@@ -82,7 +82,10 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_validate_.html#isdigital" class="tsd-kind-icon">is<wbr>Digital</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_validate_.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_validate_.html#isemptyobj" class="tsd-kind-icon">is<wbr>Empty<wbr>Obj</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_validate_.html#isflotnum" class="tsd-kind-icon">is<wbr>Flot<wbr>Num</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_validate_.html#isidcard" class="tsd-kind-icon">isIDCard</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_validate_.html#ispinum" class="tsd-kind-icon">isPINum</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_validate_.html#isphonenumber" class="tsd-kind-icon">is<wbr>Phone<wbr>Number</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_validate_.html#isqq" class="tsd-kind-icon">isQQ</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_validate_.html#istelephonenumber" class="tsd-kind-icon">is<wbr>Telephone<wbr>Number</a></li>
@@ -109,7 +112,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b5bda83/src/validate.ts#L111">validate.ts:111</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L111">validate.ts:111</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -139,7 +142,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b5bda83/src/validate.ts#L177">validate.ts:177</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L177">validate.ts:177</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -162,6 +165,76 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="isemptyobj" class="tsd-anchor"></a>
+					<h3>is<wbr>Empty<wbr>Obj</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Empty<wbr>Obj<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L193">validate.ts:193</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>name</dt>
+									<dd><p>数据为空(包含null,undefined,空字符)</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>obj: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="isflotnum" class="tsd-anchor"></a>
+					<h3>is<wbr>Flot<wbr>Num</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Flot<wbr>Num<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, num<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, count<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L205">validate.ts:205</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>str: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>检测字符串</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> num: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 2</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>几位数 默认 2</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> count: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 1</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>几位小数 默认1</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
 					<a name="isidcard" class="tsd-anchor"></a>
 					<h3>isIDCard</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
@@ -171,7 +244,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b5bda83/src/validate.ts#L164">validate.ts:164</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L164">validate.ts:164</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -195,6 +268,36 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="ispinum" class="tsd-anchor"></a>
+					<h3>isPINum</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">isPINum<span class="tsd-signature-symbol">(</span>num<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L214">validate.ts:214</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>是否正整数</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>num: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
 					<a name="isphonenumber" class="tsd-anchor"></a>
 					<h3>is<wbr>Phone<wbr>Number</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
@@ -204,7 +307,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b5bda83/src/validate.ts#L132">validate.ts:132</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L132">validate.ts:132</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -234,7 +337,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b5bda83/src/validate.ts#L151">validate.ts:151</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L151">validate.ts:151</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -266,7 +369,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b5bda83/src/validate.ts#L142">validate.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L142">validate.ts:142</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -296,7 +399,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b5bda83/src/validate.ts#L22">validate.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L22">validate.ts:22</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -321,7 +424,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b5bda83/src/validate.ts#L101">validate.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L101">validate.ts:101</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -351,7 +454,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b5bda83/src/validate.ts#L121">validate.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L121">validate.ts:121</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -381,7 +484,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b5bda83/src/validate.ts#L81">validate.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L81">validate.ts:81</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -411,7 +514,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b5bda83/src/validate.ts#L71">validate.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L71">validate.ts:71</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -441,7 +544,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/b5bda83/src/validate.ts#L91">validate.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/432df87/src/validate.ts#L91">validate.ts:91</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -468,6 +571,9 @@
 				<ul>
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="_env_.html">&quot;env&quot;</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="_filter_.html">&quot;filter&quot;</a>
@@ -507,7 +613,16 @@
 						<a href="_validate_.html#isempty" class="tsd-kind-icon">is<wbr>Empty</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_validate_.html#isemptyobj" class="tsd-kind-icon">is<wbr>Empty<wbr>Obj</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_validate_.html#isflotnum" class="tsd-kind-icon">is<wbr>Flot<wbr>Num</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_validate_.html#isidcard" class="tsd-kind-icon">isIDCard</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_validate_.html#ispinum" class="tsd-kind-icon">isPINum</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_validate_.html#isphonenumber" class="tsd-kind-icon">is<wbr>Phone<wbr>Number</a>

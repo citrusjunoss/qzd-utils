@@ -78,4 +78,9 @@ export declare function isIDCard(str: string): boolean;
  * @param str
  */
 export declare function isEmpty(str: any): boolean;
+/**
+ * @name  数据为空(包含null,undefined,空字符)
+ * @param str
+ */
+export declare function isEmptyObj(obj: any): boolean;
 export {};

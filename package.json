@@ -1,6 +1,6 @@
 {
   "name": "qzd-utils",
-  "version": "0.0.4",
+  "version": "0.0.17",
   "description": "企知道通用工具类",
   "author": "citrus",
   "directories": {
@@ -8,8 +8,13 @@
   },
   "main": "lib/index.js",
   "homepage": "https://citrusjunoss.github.io/qzd-utils",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/citrusjunoss/qzd-utils"
+  },
   "license": "MIT",
-  "keywords": ["qizhidiao", "qzd"],
+  "keywords": ["qizhidiao", "qzd", "utils"],
+  "files": ["lib", "typings/*.d.ts"],
   "scripts": {
     "test": "jest",
     "cover": "jest --coverage",
@@ -44,6 +49,7 @@
     "husky": "^4.2.5",
     "jest": "^26.0.1",
     "lint-staged": "^10.2.6",
+    "nodemon": "^2.0.6",
     "prettier": "^2.0.5",
     "ts-jest": "^26.0.0",
     "typedoc-plugin-localization": "^2.2.1",

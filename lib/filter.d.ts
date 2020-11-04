@@ -12,3 +12,15 @@ export declare function numToChinese(num: number): string;
  * @see Number.toLocalString() 有一定兼容问题
  */
 export declare function toThousandsString(number: number | string): string;
+/**
+ * @description 隐藏手机号
+ * @param string
+ * @see 130 **** 3027
+ */
+export declare function hidePhone(phone: string): string;
+/**
+ * @description 隐藏昵称
+ * @param string
+ * @see 程珀尔塔 -> 程****塔 / 程 -> 程****  / ‘’ -> ****
+ */
+export declare function hideNickname(nickname: string): string;

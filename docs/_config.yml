@@ -1,5 +1,0 @@
-include:
-  - '_*_.html'
-  - '_*_.*.html'
-theme: jekyll-theme-cayman
-

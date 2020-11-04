@@ -4,6 +4,8 @@ import {
   isPhoneNumber,
   isTelephoneNumber,
   isEmpty,
+  isFlotNum,
+  isPINum
 } from '../src/validate';
 
 describe('validate.test vailPassword', () => {
@@ -50,6 +52,9 @@ describe('validate.test isPhoneNumber', () => {
   test('isPhoneNumber test not pass', () => {
     expect(isPhoneNumber('121312sdf12')).toBe(false);
   });
+  test('isPhoneNumber test new phone code', () => {
+    expect(isPhoneNumber('19965412404')).toBe(true);
+  });
 });
 
 describe('validate.test isTelephoneNumber', () => {
@@ -67,5 +72,22 @@ describe('validate.test isEmpty', () => {
   });
   test('isEmpty test not pass', () => {
     expect(isEmpty(0)).toBe(false);
+  });
+});
+describe('validate.test isFlotNum', () => {
+  test('isFlotNum test pass', () => {
+    expect(isFlotNum('11.11', 2, 2 )).toBe(true);
+  });
+  test('isFlotNum test not pass', () => {
+    expect(isFlotNum('11.11')).toBe(false);
+  });
+});
+
+describe('validate.test isPINum', () => {
+  test('isPINum test pass', () => {
+    expect(isPINum('-1')).toBe(false);
+  });
+  test('isPINum test not pass', () => {
+    expect(isPINum('11')).toBe(true);
   });
 });
