@@ -43,7 +43,7 @@ export function getFileNameByPath(path: string, noExt?: boolean): string {
  * @param obj
  * @param hash 解决循环引用
  */
-export function deepClone(obj: any, hash = new WeakMap()) {
+export function deepClone<T>(obj: any | any, hash = new WeakMap()): T | any {
   if (obj === null) return obj; // 如果是null或者undefined我就不进行拷贝操作
   if (obj instanceof Date) return new Date(obj);
   if (obj instanceof RegExp) return new RegExp(obj);

@@ -83,4 +83,16 @@ export declare function isEmpty(str: any): boolean;
  * @param str
  */
 export declare function isEmptyObj(obj: any): boolean;
+/**
+ *
+ * @param {*} str 检测字符串
+ * @param {*} num 几位数 默认 2
+ * @param {*} count 几位小数 默认1
+ */
+export declare function isFlotNum(str: string, num?: number, count?: number): boolean;
+/**
+ * 是否正整数
+ * @param {*} num
+ */
+export declare function isPINum(num: string): boolean;
 export {};
