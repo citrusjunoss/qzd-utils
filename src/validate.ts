@@ -185,3 +185,33 @@ export function isEmpty(str: any): boolean {
     return false;
   }
 }
+/**
+ * @name  数据为空(包含null,undefined,空字符)
+ * @param str
+ */
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+export function isEmptyObj(obj: any): boolean {
+  if (!obj) return false;
+  return !!Object.keys(obj).length;
+}
+
+/**
+ *
+ * @param {*} str 检测字符串
+ * @param {*} num 几位数 默认 2
+ * @param {*} count 几位小数 默认1
+ */
+export function isFlotNum(str: string, num = 2, count = 1): boolean {
+  return new RegExp(`^\\d{0,${num}}([\\b]*|\\.|\\.\\d{0,${count}}|$)$`).test(
+    str,
+  );
+}
+
+/**
+ * 是否正整数
+ * @param {*} num
+ */
+export function isPINum(num: string): boolean {
+  const result = /^\+?[1-9][0-9]*$/.test(num);
+  return result;
+}

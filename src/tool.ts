@@ -22,6 +22,43 @@ export function getfilesize(size: number): string {
   if (size < Math.pow(num, 3))
     return accDiv(size, Math.pow(num, 2)).toFixed(2) + 'M'; //M
   if (size < Math.pow(num, 4))
-    return accDiv(size, Math.pow(num, 3)).toFixed(2) + 'G'; //G
+    return accDiv(size, Math.pow(num, 3)).toFixed(2) + 'G'; //Gobjobj
   return accDiv(size, Math.pow(num, 4)).toFixed(2) + 'T'; //T
+}
+
+/**
+ *
+ * @name 通过文件路径获取文件名字
+ * @param path  文件路径
+ * @param noExt 不包含扩展名
+ */
+export function getFileNameByPath(path: string, noExt?: boolean): string {
+  const fullName = path.split('/').pop();
+  if (!fullName) return '';
+  return noExt ? fullName.slice(0, fullName.lastIndexOf('.')) : fullName;
+}
+
+/**
+ * @name 对象
+ * @param obj
+ * @param hash 解决循环引用
+ */
+export function deepClone(obj: any, hash = new WeakMap()) {
+  if (obj === null) return obj; // 如果是null或者undefined我就不进行拷贝操作
+  if (obj instanceof Date) return new Date(obj);
+  if (obj instanceof RegExp) return new RegExp(obj);
+  // 可能是对象或者普通的值  如果是函数的话是不需要深拷贝
+  if (typeof obj !== 'object') return obj;
+  // 是对象的话就要进行深拷贝
+  if (hash.get(obj)) return hash.get(obj);
+  const cloneObj = new obj.constructor();
+  // 找到的是所属类原型上的constructor,而原型上的 constructor指向的是当前类本身
+  hash.set(obj, cloneObj);
+  for (const key in obj) {
+    if (Object.prototype.hasOwnProperty.call(obj, key)) {
+      // 实现一个递归拷贝
+      cloneObj[key] = deepClone(obj[key], hash);
+    }
+  }
+  return cloneObj;
 }
