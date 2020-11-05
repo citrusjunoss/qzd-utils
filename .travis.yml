@@ -25,7 +25,7 @@ script:
   - git init
   - git add -A
   - git commit -m "docs:update docs"
-  - git push --force --quiet "https://${GITHUB_TOKEN}@https://github.com/citrusjunoss/qzd-utils.git" master:gh_page
+  - git push --force --quiet "https://${GITHUB_TOKEN}@github.com/citrusjunoss/qzd-utils.git" master:gh_page
 deploy:
   provider: npm
   email: chengjunchao@hotmail.com
