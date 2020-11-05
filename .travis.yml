@@ -21,6 +21,12 @@ script:
   - npm run test
 before_deploy:
   - npm run build
+  - npm run docs
+  - cp ./_config.yml ./docs/_config.yml
+  - git init
+  - git add -A
+  - git commit -m "docs:update docs"
+  - git push --force --quiet "https://${GitHub_TOKEN}@https://github.com/citrusjunoss/qzd-utils.git" master:gh_page
 # Configure to send notifications when the build fails. https://docs.travis-ci.com/user/notifications
 deploy:
   provider: npm
@@ -31,12 +37,6 @@ deploy:
     repo: citrusjunoss/qzd-utils
 # Build doc report cover   
 after_success: 
- - npm run docs
- - cp ./_config.yml ./docs/_config.yml
- - git init
- - git add -A
- - git commit -m "docs:update docs"
- - git push --force --quiet "https://${GitHub_TOKEN}@https://github.com/citrusjunoss/qzd-utils.git" master:gh_page
  - NODE_COVERALLS_DEBUG=1 npm run cover
 # notifications:
 #   webhooks:
