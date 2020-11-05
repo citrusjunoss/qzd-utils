@@ -4,7 +4,7 @@ node_js: 12
 
 jobs:
   include:
-    - stage: test # naming the Tests stage
+    - stage: test
       install: npm install
       test:
         script:
