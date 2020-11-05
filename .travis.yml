@@ -19,16 +19,13 @@ branches:
 # The script to execute.
 script:
   - npm run test
-  - npm run cover
-before_deploy:
   - npm run build
   - npm run docs
   - cp ./_config.yml ./docs/_config.yml
   - git init
   - git add -A
   - git commit -m "docs:update docs"
-  - git push --force --quiet "https://${GitHub_TOKEN}@https://github.com/citrusjunoss/qzd-utils.git" master:gh_page
-# Configure to send notifications when the build fails. https://docs.travis-ci.com/user/notifications
+  - git push --force --quiet "https://${GITHUB_TOKEN}@https://github.com/citrusjunoss/qzd-utils.git" master:gh_page
 deploy:
   provider: npm
   email: chengjunchao@hotmail.com
@@ -36,6 +33,10 @@ deploy:
   on:
     tags: true
     repo: citrusjunoss/qzd-utils
+# Build doc report cover
+after_success:
+  - NODE_COVERALLS_DEBUG=1 npm run cover
+# Configure to send notifications when the build fails. https://docs.travis-ci.com/user/notifications
 # notifications:
 #   webhooks:
 #     urls:

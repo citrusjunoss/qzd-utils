@@ -3,7 +3,7 @@
  */
 
 /**
- * @description 阿拉伯数字转换为中文数字
+ * @name 阿拉伯数字转换为中文数字
  * @param  {number} num
  */
 export function numToChinese(num: number): string {
@@ -75,7 +75,7 @@ export function numToChinese(num: number): string {
 }
 
 /**
- * @description 货币格式化(千分位计数)
+ * @name 货币格式化(千分位计数)
  * @param number | string
  * @see Number.toLocalString() 有一定兼容问题
  */
@@ -101,20 +101,20 @@ export function toThousandsString(number: number | string): string {
 }
 
 /**
- * @description 隐藏手机号
+ * @name 隐藏手机号
  * @param string
  * @see 130 **** 3027
  */
-export function hidePhone(phone: string) {
+export function hidePhone(phone: string): string {
   return phone.replace(/(\d{3})\d{4}(\d{4})/, '$1****$2');
 }
 
 /**
- * @description 隐藏昵称
+ * @name 隐藏昵称
  * @param string
  * @see 程珀尔塔 -> 程****塔 / 程 -> 程****  / ‘’ -> ****
  */
-export function hideNickname(nickname: string) {
+export function hideNickname(nickname: string): string {
   let res = nickname.replace(/^(.).*(.)$/, '$1***$2');
   if (res.length === 1) {
     res = `${res}****`;

@@ -17,6 +17,7 @@
   "files": ["lib", "typings/*.d.ts"],
   "scripts": {
     "test": "jest",
+    "build": "tsc",
     "cover": "jest --coverage && coveralls < coverage/lcov.info",
     "watch": "tsc -w && node lib/index.js",
     "start": "nodemon --config nodemon.json lib/index.js",
