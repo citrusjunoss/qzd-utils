@@ -1,44 +1,47 @@
+# Designated language. https://docs.travis-ci.com/user/languages/javascript-with-nodejs/
 language: node_js
 
-node_js: 12
+# Install dependence
+install:
+  - npm install
 
-jobs:
-  include:
-    - stage: test
-      install: npm install
-      test:
-        script:
-          - npm run test
-          - npm run cover
-        after_success:
-          - echo "NPM coveralls Started ..."
-          - npm run coveralls
-    - stage: build
-      build:
-        install: skip
-        script:
-          - npm run build
-          - npm run doc
-          - echo "build done!"
-    - stage: docs
-      docs:
-        provider: pages
-        cleanup: true
-        github_token: $GITHUB_TOKEN
-        keep_history: true
-        script:
-          - echo 'move config 文件'
-        target_branch: gh_page
-        on:
-          branch: master
-    - stage: deploy
-      deploy:
-        provider: npm
-        email: chengjunchao@hotmail.com
-        api_key: '$NPM_TOKEN'
-        cleanup: true
-        on:
-          tags: true
-          branch: all
-        tag: latest
-        # condition: '$TRAVIS_TAG =~ ^v[0-9]+.[0-9]+.[0-9]+$'
+# Cache the node_modules folder and don't need to download and install all npm packages every time.
+cache:
+  directories:
+    - node_modules
+# Specify the node version.
+node_js:
+  - "12"
+# Perform builds only on the specified branch.  https://docs.travis-ci.com/user/customizing-the-build/#building-specific-branches
+branches:
+  only:
+    - master
+# The script to execute.
+script:
+  - npm run test
+  - npm run cover
+  - npm run coveralls
+before_deploy: 
+  - npm run build
+  - npm run docs
+  - cp ./_config.yml ./docs/_config.yml
+  - git init
+  - git add -A
+  - git commit -m "docs:update docs"
+  - git push --force --quiet "https://${GitHub_TOKEN}@https://github.com/citrusjunoss/qzd-utils.git" master:gh_page
+# Configure to send notifications when the build fails. https://docs.travis-ci.com/user/notifications
+deploy:
+  provider: npm
+  email: chengjunchao@hotmail.com
+  api_key: ${NPM_TOKEN}
+  on:
+    tags: true
+    repo: citrusjunoss/qzd-utils
+  skip_cleanup: 'true'  
+# notifications:
+#   webhooks:
+#     urls:
+#       - https://www.travisbuddy.com/
+#     on_success: never # Successful build does not send mail.
+#     on_failure: always # Build failure always sends a message.
+
