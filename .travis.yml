@@ -19,7 +19,6 @@ branches:
 # The script to execute.
 script:
   - npm run test
-before_deploy:
   - npm run build
   - npm run docs
   - cp ./_config.yml ./docs/_config.yml
