@@ -20,7 +20,7 @@ branches:
 script:
   - npm run test
   - npm run build
-  - npm run docs
+  - npm run doc
   - cp ./_config.yml ./docs/_config.yml
   - git init
   - git add -A
