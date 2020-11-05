@@ -1,35 +1,40 @@
 language: node_js
 
-node_js: 10
+node_js: 12
 
 stages:
   - test
   - build
   - deploy
+
 # 打包
 build:
   stage: build
-  install: npm install
+  install: skip
   script:
     - npm run build
     - npm run doc
+    - echo "build done!"
+
 # 测试
 test:
   stage: test
-  install: skip
+  install: npm install
   script:
+    - echo "NPM Test Started ..."
     - npm run test
     - npm run cover
   after_success:
+    - echo "NPM coveralls Started ..."
     - npm run coveralls
-
-  deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_history: true
-  on:
-    branch: master
+# # 部署
+# deploy:
+#   provider: pages
+#   skip_cleanup: true
+#   github_token: $GITHUB_TOKEN
+#   keep_history: true
+#   on:
+#     branch: master
 # 发布
 publish:
   only:
@@ -37,10 +42,11 @@ publish:
   tags:
     - your-runner-tag
   script:
-    - echo "NPM Deploying Started ..."
+    - echo "NPM publish Started ..."
     - npm version
     - npm run build
     - echo "NPM Building Finished."
+
 # release
 deploy:
   provider: npm

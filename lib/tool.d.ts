@@ -10,3 +10,16 @@ export declare function getFileExtension(filename: string): string;
  * @param size
  */
 export declare function getfilesize(size: number): string;
+/**
+ *
+ * @name 通过文件路径获取文件名字
+ * @param path  文件路径
+ * @param noExt 不包含扩展名
+ */
+export declare function getFileNameByPath(path: string, noExt?: boolean): string;
+/**
+ * @name 对象
+ * @param obj
+ * @param hash 解决循环引用
+ */
+export declare function deepClone<T>(obj: any | any, hash?: WeakMap<object, any>): T | any;
