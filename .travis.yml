@@ -5,6 +5,7 @@ node_js: 12
 stages:
   - test
   - build
+  - docs
   - deploy
 
 # 打包
@@ -28,13 +29,16 @@ test:
     - echo "NPM coveralls Started ..."
     - npm run coveralls
 # # 部署
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   github_token: $GITHUB_TOKEN
-#   keep_history: true
-#   on:
-#     branch: master
+docs:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  script:
+    - echo 'move config 文件'
+  target_branch: gh_page
+  on:
+    branch: master
 # 发布
 publish:
   only:
