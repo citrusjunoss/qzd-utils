@@ -2,59 +2,41 @@ language: node_js
 
 node_js: 12
 
-stages:
-  - test
-  - build
-  - deploy
-
-# 打包
-build:
-  stage: build
-  install: skip
-  script:
-    - npm run build
-    - npm run doc
-    - echo "build done!"
-
-# 测试
-test:
-  stage: test
-  install: npm install
-  script:
-    - echo "NPM Test Started ..."
-    - npm run test
-    - npm run cover
-  after_success:
-    - echo "NPM coveralls Started ..."
-    - npm run coveralls
-# # 部署
-# deploy:
-#   provider: pages
-#   skip_cleanup: true
-#   github_token: $GITHUB_TOKEN
-#   keep_history: true
-#   on:
-#     branch: master
-# 发布
-publish:
-  only:
-    - tags
-  tags:
-    - your-runner-tag
-  script:
-    - echo "NPM publish Started ..."
-    - npm version
-    - npm run build
-    - echo "NPM Building Finished."
-
-# release
-deploy:
-  provider: npm
-  email: chengjunchao@hotmail.com
-  api_key: '$NPM_TOKEN'
-  skip_cleanup: true
-  on:
-    tags: true
-    branch: all
-  tag: latest
-  condition: '$TRAVIS_TAG =~ ^v[0-9]+.[0-9]+.[0-9]+$'
+jobs:
+  include:
+    - stage: test # naming the Tests stage
+      name: 'npm test' # names the first Tests stage job
+      install: npm install
+      script:
+        - npm run test
+        - npm run cover
+      after_success:
+        - echo "NPM coveralls Started ..."
+        - npm run coveralls
+    - stage: build
+      name: 'build'
+      install: skip
+      script:
+        - npm run build
+        - npm run doc
+        - echo "build done!"
+    - stage: docs
+      provider: pages
+      skip_cleanup: true
+      github_token: $GITHUB_TOKEN
+      keep_history: true
+      script:
+        - echo 'move config 文件'
+      target_branch: gh_page
+      on:
+        branch: master
+    - stage: deploy
+      provider: npm
+      email: chengjunchao@hotmail.com
+      api_key: '$NPM_TOKEN'
+      skip_cleanup: true
+      on:
+        tags: true
+        branch: all
+      tag: latest
+      condition: '$TRAVIS_TAG =~ ^v[0-9]+.[0-9]+.[0-9]+$'
