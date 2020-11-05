@@ -29,14 +29,15 @@ deploy:
   on:
     tags: true
     repo: citrusjunoss/qzd-utils
- after_success: 
-   - npm run docs
-   - cp ./_config.yml ./docs/_config.yml
-   - git init
-   - git add -A
-   - git commit -m "docs:update docs"
-   - git push --force --quiet "https://${GitHub_TOKEN}@https://github.com/citrusjunoss/qzd-utils.git" master:gh_page
-   - NODE_COVERALLS_DEBUG=1 npm run cover
+# Build doc report cover   
+after_success: 
+ - npm run docs
+ - cp ./_config.yml ./docs/_config.yml
+ - git init
+ - git add -A
+ - git commit -m "docs:update docs"
+ - git push --force --quiet "https://${GitHub_TOKEN}@https://github.com/citrusjunoss/qzd-utils.git" master:gh_page
+ - NODE_COVERALLS_DEBUG=1 npm run cover
 # notifications:
 #   webhooks:
 #     urls:
