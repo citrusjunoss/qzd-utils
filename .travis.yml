@@ -19,7 +19,7 @@ branches:
 # The script to execute.
 script:
   - npm run test
-  - npm run cover
+  - NODE_COVERALLS_DEBUG=1 npm run cover
 before_deploy:
   - npm run build
   - npm run docs
