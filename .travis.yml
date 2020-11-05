@@ -11,7 +11,7 @@ cache:
     - node_modules
 # Specify the node version.
 node_js:
-  - "12"
+  - '12'
 # Perform builds only on the specified branch.  https://docs.travis-ci.com/user/customizing-the-build/#building-specific-branches
 branches:
   only:
@@ -20,8 +20,7 @@ branches:
 script:
   - npm run test
   - npm run cover
-  - npm run coveralls
-before_deploy: 
+before_deploy:
   - npm run build
   - npm run docs
   - cp ./_config.yml ./docs/_config.yml
@@ -37,7 +36,6 @@ deploy:
   on:
     tags: true
     repo: citrusjunoss/qzd-utils
-  skip_cleanup: 'true'  
 # notifications:
 #   webhooks:
 #     urls:
