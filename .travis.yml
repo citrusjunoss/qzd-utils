@@ -24,7 +24,6 @@ script:
   - cp ./_config.yml ./docs/_config.yml
   - git init
   - git add -A
-  - git symbolic-ref --short HEAD
   - git commit -m "docs:update docs"
   - git push --force --quiet "https://${GITHUB_TOKEN}@github.com/citrusjunoss/qzd-utils.git" master:gh_page
 deploy:
