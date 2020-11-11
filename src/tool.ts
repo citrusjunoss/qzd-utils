@@ -11,19 +11,33 @@ export function getFileExtension(filename: string): string {
 }
 
 /**
- * @name 文件大小转换根据大小转换为不同的计量单位
- * @param size
+ * @name 文件大小转换根据大小转换为不同的计量单位(换算比例1000)
+ * @param num  文件大小 字节
+ * @param digits 保留几位小数
  */
-export function getfilesize(size: number): string {
-  if (!size) return '';
-  const num = 1024.0; //byte
-  if (size < num) return size + 'B';
-  if (size < Math.pow(num, 2)) return accDiv(size, num).toFixed(2) + 'KB'; //kb
-  if (size < Math.pow(num, 3))
-    return accDiv(size, Math.pow(num, 2)).toFixed(2) + 'M'; //M
-  if (size < Math.pow(num, 4))
-    return accDiv(size, Math.pow(num, 3)).toFixed(2) + 'G'; //Gobjobj
-  return accDiv(size, Math.pow(num, 4)).toFixed(2) + 'T'; //T
+export function getfilesize(num: number, digits?: number): string {
+  if (!num) return '';
+  const count = digits || 2;
+  const si = [
+    { value: 1024 ** 6, symbol: 'E' },
+    { value: 1024 ** 5, symbol: 'P' },
+    { value: 1024 ** 4, symbol: 'T' },
+    { value: 1024 ** 3, symbol: 'G' },
+    { value: 1024 ** 2, symbol: 'M' },
+    { value: 1024, symbol: 'k' },
+    { value: 0, symbol: 'B' },
+  ];
+  for (let i = 0; i < si.length; i++) {
+    if (num >= si[i].value) {
+      const size = si[i].value ? num / si[i].value : num;
+      const upSize =
+        size - Math.floor(size) < 10 ** -count && size - Math.floor(size) > 0
+          ? size + 10 ** -count
+          : size;
+      return upSize.toFixed(count) + si[i].symbol;
+    }
+  }
+  return num.toString();
 }
 
 /**
@@ -39,7 +53,7 @@ export function getFileNameByPath(path: string, noExt?: boolean): string {
 }
 
 /**
- * @name 对象
+ * @name 对象深拷贝
  * @param obj
  * @param hash 解决循环引用
  */
@@ -61,4 +75,13 @@ export function deepClone<T>(obj: any | any, hash = new WeakMap()): T | any {
     }
   }
   return cloneObj;
+}
+
+/**
+ * @name 生成唯一字符串(伪唯一)
+ */
+export function createUniqueString(): string {
+  const timestamp = +new Date() + '';
+  const randomNum = parseInt(`${(1 + Math.random()) * 65536}`) + '';
+  return (+(randomNum + timestamp)).toString(32);
 }

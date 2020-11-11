@@ -11,10 +11,10 @@ describe('tool.test getFileExtension', () => {
 
 describe('tool.test getfilesize', () => {
   test('getfilesize test pass', () => {
-    expect(getfilesize(1023)).toBe('1023B');
+    expect(getfilesize(1023)).toBe('1023.00B');
   });
   test('getfilesize test is pass', () => {
-    expect(getfilesize(1024 * 1024 * 1024 * 15)).toBe('15.00G');
+    expect(getfilesize(1024 ** 3 * 3 + 1)).toBe('3.01G');
   });
 });
 describe('tool.test getFileNameByPath', () => {
