@@ -20,11 +20,11 @@ branches:
 script:
   - npm run test
   - npm run build
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run doc; fi' 
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then cp ./_config.yml ./docs/_config.yml; fi' 
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git init && git add -A && git commit -m "docs:update docs add tag"; fi' 
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git push --force --quiet "https://${GITHUB_TOKEN}@github.com/citrusjunoss/qzd-utils.git" master:gh_page; fi' 
-  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then npm version ${VERSION_TAG}; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then npm run doc; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then cp ./_config.yml ./docs/_config.yml; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git init && git add -A && git commit -m "docs:update docs add tag"; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git push --force --quiet "https://${GITHUB_TOKEN}@github.com/citrusjunoss/qzd-utils.git" master:gh_page; fi'
+  - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then npm version ${VERSION_TAG} && git tag; fi'
   - 'if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then git push --follow-tags --force --quiet "https://${GITHUB_TOKEN}@github.com/citrusjunoss/qzd-utils.git" master:master; fi'
 deploy:
   provider: npm
