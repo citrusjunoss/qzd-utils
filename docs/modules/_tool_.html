@@ -73,6 +73,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_tool_.html#createuniquestring" class="tsd-kind-icon">create<wbr>Unique<wbr>String</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_tool_.html#deepclone" class="tsd-kind-icon">deep<wbr>Clone</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_tool_.html#getfileextension" class="tsd-kind-icon">get<wbr>File<wbr>Extension</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_tool_.html#getfilenamebypath" class="tsd-kind-icon">get<wbr>File<wbr>Name<wbr>ByPath</a></li>
@@ -84,6 +85,30 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="createuniquestring" class="tsd-anchor"></a>
+					<h3>create<wbr>Unique<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Unique<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/05d8cc2/src/tool.ts#L83">tool.ts:83</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>name</dt>
+									<dd><p>生成唯一字符串(伪唯一)</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
 					<a name="deepclone" class="tsd-anchor"></a>
 					<h3>deep<wbr>Clone</h3>
@@ -94,13 +119,13 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/7e0f118/src/tool.ts#L46">tool.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/05d8cc2/src/tool.ts#L60">tool.ts:60</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>name</dt>
-									<dd><p>对象</p>
+									<dd><p>对象深拷贝</p>
 									</dd>
 								</dl>
 							</div>
@@ -136,7 +161,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/7e0f118/src/tool.ts#L9">tool.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/05d8cc2/src/tool.ts#L9">tool.ts:9</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -172,7 +197,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/7e0f118/src/tool.ts#L35">tool.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/05d8cc2/src/tool.ts#L49">tool.ts:49</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -205,27 +230,34 @@
 					<a name="getfilesize" class="tsd-anchor"></a>
 					<h3>getfilesize</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">getfilesize<span class="tsd-signature-symbol">(</span>size<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">getfilesize<span class="tsd-signature-symbol">(</span>num<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, digits<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/7e0f118/src/tool.ts#L17">tool.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/citrusjunoss/qzd-utils/blob/05d8cc2/src/tool.ts#L18">tool.ts:18</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<dl class="tsd-comment-tags">
 									<dt>name</dt>
-									<dd><p>文件大小转换根据大小转换为不同的计量单位</p>
+									<dd><p>文件大小转换根据大小转换为不同的计量单位(换算比例1000)</p>
 									</dd>
 								</dl>
 							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>size: <span class="tsd-signature-type">number</span></h5>
+									<h5>num: <span class="tsd-signature-type">number</span></h5>
 									<div class="tsd-comment tsd-typography">
+										<p>文件大小 字节</p>
+									</div>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> digits: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>保留几位小数</p>
 									</div>
 								</li>
 							</ul>
@@ -269,6 +301,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_tool_.html#createuniquestring" class="tsd-kind-icon">create<wbr>Unique<wbr>String</a>
+					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
 						<a href="_tool_.html#deepclone" class="tsd-kind-icon">deep<wbr>Clone</a>
 					</li>
