@@ -1,4 +1,4 @@
-import { getFileExtension, getfilesize, getFileNameByPath } from '../src/tool';
+import { getFileExtension, getfilesize, getFileNameByPath, createUniqueString, deepClone } from '../src/tool';
 
 describe('tool.test getFileExtension', () => {
   test('getFileExtension test pass', () => {
@@ -15,6 +15,20 @@ describe('tool.test getfilesize', () => {
   });
   test('getfilesize test is pass', () => {
     expect(getfilesize(1024 ** 3 * 3 + 1)).toBe('3.01G');
+  });
+});
+
+describe('tool.test createUniqueString', () => {
+  test('createUniqueString test pass', () => {
+    expect(createUniqueString() === createUniqueString()).toBe(false);
+  });
+});
+describe('tool.test deepClone', () => {
+  test('deepClone test pass', () => {
+    const a = { b : {c: 2}};
+    const c = deepClone(a)
+    a.b.c = 3
+    expect(c.b !== a.b.c).toBe(true);
   });
 });
 describe('tool.test getFileNameByPath', () => {

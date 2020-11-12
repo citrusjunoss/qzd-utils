@@ -76,11 +76,11 @@ export function numToChinese(num: number): string {
 
 /**
  * @name 货币格式化(千分位计数)
- * @param number | string
+ * @param num | string | number
  * @see Number.toLocalString() 有一定兼容问题
  */
-export function toThousandsString(number: number | string): string {
-  const splitNumber = number.toString().split('.');
+export function toThousandsString(num: number | string): string {
+  const splitNumber = `${num}`.toString().split('.');
   let integer = splitNumber[0];
   const decimal = splitNumber[1] || '';
 

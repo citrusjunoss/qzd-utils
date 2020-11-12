@@ -6,10 +6,11 @@
  */
 export declare function getFileExtension(filename: string): string;
 /**
- * @name 文件大小转换根据大小转换为不同的计量单位
- * @param size
+ * @name 文件大小转换根据大小转换为不同的计量单位(换算比例1000)
+ * @param num  文件大小 字节
+ * @param digits 保留几位小数
  */
-export declare function getfilesize(size: number): string;
+export declare function getfilesize(num: number, digits?: number): string;
 /**
  *
  * @name 通过文件路径获取文件名字
@@ -18,8 +19,12 @@ export declare function getfilesize(size: number): string;
  */
 export declare function getFileNameByPath(path: string, noExt?: boolean): string;
 /**
- * @name 对象
+ * @name 对象深拷贝
  * @param obj
  * @param hash 解决循环引用
  */
 export declare function deepClone<T>(obj: any | any, hash?: WeakMap<object, any>): T | any;
+/**
+ * @name 生成唯一字符串(伪唯一)
+ */
+export declare function createUniqueString(): string;
