@@ -1,3 +1,12 @@
+## [0.0.20](https://github.com/citrusjunoss/qzd-utils/compare/v0.0.19...v0.0.20) (2020-11-12)
+
+
+### Bug Fixes
+
+* **tools:** getfilesize 取证问题 ([dc77f83](https://github.com/citrusjunoss/qzd-utils/commit/dc77f835c3b5354b65856e1a3a7d7ef1b716e6f6))
+
+
+
 ## [0.0.19](https://github.com/citrusjunoss/qzd-utils/compare/0.0.2...0.0.19) (2020-11-11)
 
 
