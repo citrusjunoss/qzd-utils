@@ -8,10 +8,10 @@
 export declare function numToChinese(num: number): string;
 /**
  * @name 货币格式化(千分位计数)
- * @param number | string
+ * @param num | string | number
  * @see Number.toLocalString() 有一定兼容问题
  */
-export declare function toThousandsString(number: number | string): string;
+export declare function toThousandsString(num: number | string): string;
 /**
  * @name 隐藏手机号
  * @param string

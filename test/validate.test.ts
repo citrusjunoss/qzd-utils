@@ -5,7 +5,14 @@ import {
   isTelephoneNumber,
   isEmpty,
   isFlotNum,
-  isPINum
+  validateURL,
+  isPINum,
+  validateLowerCase,
+  validateUpperCase,
+  validatAlphabets,
+  validateEmail,
+  isQQ,
+  isIDCard
 } from '../src/validate';
 
 describe('validate.test vailPassword', () => {
@@ -89,5 +96,61 @@ describe('validate.test isPINum', () => {
   });
   test('isPINum test not pass', () => {
     expect(isPINum('11')).toBe(true);
+  });
+});
+describe('validate.test validateURL', () => {
+  test('validateURL test pass', () => {
+    expect(validateURL('https://1aeracc.com')).toBe(true);
+  });
+  test('validateURL test not pass', () => {
+    expect(isPINum('https//1aera/cc.com')).toBe(false);
+  });
+});
+describe('validate.test validateLowerCase', () => {
+  test('validateLowerCase test pass', () => {
+    expect(validateLowerCase('httpsaeracccom')).toBe(true);
+  });
+  test('validateLowerCase test not pass', () => {
+    expect(validateLowerCase('validateLowerCase')).toBe(false);
+  });
+});
+describe('validate.test validateUpperCase', () => {
+  test('validateUpperCase test pass', () => {
+    expect(validateUpperCase('ASFDASFA')).toBe(true);
+  });
+  test('validateUpperCase test not pass', () => {
+    expect(validateUpperCase('AAAAsdAAAAA')).toBe(false);
+  });
+});
+describe('validate.test validatAlphabets', () => {
+  test('validatAlphabets test pass', () => {
+    expect(validatAlphabets('ASFDASFAs')).toBe(true);
+  });
+  test('validatAlphabets test not pass', () => {
+    expect(validatAlphabets('AAAAsdAAAAA,')).toBe(false);
+  });
+});
+describe('validate.test validateEmail', () => {
+  test('validateEmail test pass', () => {
+    expect(validateEmail('cheng#@gmail.com')).toBe(true);
+  });
+  test('validateEmail test not pass', () => {
+    expect(validateEmail('12312sedf#$qq.com,')).toBe(false);
+  });
+});
+describe('validate.test isQQ', () => {
+  test('isQQ test pass', () => {
+    expect(isQQ('4123112312')).toBe(true);
+  });
+  test('isQQ test not pass', () => {
+    expect(isQQ('12312sedf#$qq.com,')).toBe(false);
+  });
+});
+describe('validate.test isIDCard', () => {
+  test('isIDCard test pass', () => {
+    expect(isIDCard('41231123121912301X')).toBe(true);
+  });
+  test('isIDCard test not pass', () => {
+    expect(isIDCard('12312sedf#$qq.com,')).toBe(false);
   });
 });
