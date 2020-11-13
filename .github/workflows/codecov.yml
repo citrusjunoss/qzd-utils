@@ -1,4 +1,3 @@
-  
 name: codecov
 
 on: [push]
@@ -41,15 +40,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v2
-        # with:
-        #   token: ${{ secrets.ACCESS_TOKEN }}
-      # - name: Checkout submodules
-      #   uses: actions/checkout@v2
-      #   with:
-      #     repository: tangjinzhou/antdv-demo
-      #     token: ${{ secrets.ACCESS_TOKEN }}
-      #     path: antdv-demo
-      #     submodules: true
 
       - name: restore cache from package-lock.json
         uses: actions/cache@v1
@@ -66,7 +56,7 @@ jobs:
       - name: Generate coverage report
         run: npm test
         env:
-          COVERAGE: "true"
+          COVERAGE: 'true'
 
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
