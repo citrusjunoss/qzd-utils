@@ -7,5 +7,5 @@ module.exports = {
     "^.+\\.tsx?$": "ts-jest"
   },
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
-  coverageReporters: ['lcov', 'text-summary']
+  collectCoverage: process.env.COVERAGE === 'true',
 };
