@@ -1,6 +1,6 @@
 # 企知道 Web 通用工具函数
 
-[![](https://travis-ci.com/citrusjunoss/qzd-utils.svg?branch=master)](https://travis-ci.org/citrusjunoss/qzd-utils) [![codecov](https://codecov.io/gh/citrusjunoss/qzd-utils/branch/master/graph/badge.svg)](https://codecov.io/gh/citrusjunoss/qzd-utils) [![GitHub issues](https://img.shields.io/github/issues/citrusjunoss/qzd-utils)](https://github.com/citrusjunoss/qzd-utils/issues)
+[![](https://github.com/citrusjunoss/qzd-utils/workflows/test/badge.svg)](https://github.com/citrusjunoss/qzd-utils/workflows/test/badge.svg) [![](https://codecov.io/gh/citrusjunoss/qzd-utils/branch/master/graph/badge.svg)](https://codecov.io/gh/citrusjunoss/qzd-utils) [![GitHub issues](https://img.shields.io/github/issues/citrusjunoss/qzd-utils)](https://github.com/citrusjunoss/qzd-utils/issues)
 
 ### 安装
 
