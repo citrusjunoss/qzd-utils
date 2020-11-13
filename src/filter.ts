@@ -80,10 +80,10 @@ export function numToChinese(num: number): string {
  * @see Number.toLocalString() 有一定兼容问题
  */
 export function toThousandsString(num: number | string): string {
-  const splitNumber = `${num}`.toString().split('.');
+  if (!num) return '0';
+  const splitNumber = `${num}`.split('.');
   let integer = splitNumber[0];
   const decimal = splitNumber[1] || '';
-
   let result = '';
   while (integer.length > 3) {
     result = ',' + integer.slice(-3) + result;
