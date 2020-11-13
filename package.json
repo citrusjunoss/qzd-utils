@@ -18,6 +18,7 @@
   "scripts": {
     "test": "jest",
     "build": "tsc",
+    "lint": "eslint -c ./.eslintrc.json --fix --ext .json,.js,.ts,.tsx ./src",
     "codecov": "codecov",
     "watch": "tsc -w && node lib/index.js",
     "start": "nodemon --config nodemon.json lib/index.js",

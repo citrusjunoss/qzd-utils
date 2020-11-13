@@ -1,5 +1,3 @@
-import { accDiv } from './utils';
-
 /**
  *@name 获取文件扩展名
  *@filename  文件名 需要带后缀
