@@ -1,9 +1,11 @@
-name: deploy gh_pages
+name: gh_pages
+
 on:
   push:
     # Sequence of patterns matched against refs/tags
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -12,11 +14,11 @@ jobs:
         with:
           submodules: true # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
-      - name: Build
+      - name: BuildDocs
         run: npm run doc
-      - name: Copy Config
+      - name: CopyConfig
         run: cp ./_config.yml ./docs/_config.yml
-      - name: Deploy
+      - name: DeployPages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
