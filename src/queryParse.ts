@@ -57,15 +57,20 @@ function decode(s: string) {
   return s.replace(/(%[0-9A-Z]{2})+/g, decodeURIComponent);
 }
 
+/**
+ * @name  解析cookie
+ * @param key
+ * @param json
+ * @param customCookies
+ * @param standard
+ */
 export function parseCookies(
   key: string,
   json?: boolean,
   customCookies?: string,
   standard?: boolean,
 ): string | undefined {
-  if (typeof document === 'undefined' && customCookies) {
-    return;
-  }
+  if (typeof document === 'undefined' && customCookies) return;
   const cookiesSplite = standard ? '; ' : ';';
   const cookiesStr = customCookies ? customCookies : document.cookie;
   const cookies = cookiesStr ? cookiesStr.split(cookiesSplite) : [];

@@ -9,11 +9,7 @@
 export function numToChinese(num: number): string {
   const numStr = num + '';
   if (numStr === '') return '';
-  if (!/^\d*(\.\d*)?$/.test(numStr)) {
-    console.error('Not Number!');
-    return '';
-  }
-
+  if (!/^\d*(\.\d*)?$/.test(numStr)) return '';
   const cnNums = ['零', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
   const cnIntRadice = ['', '十', '百', '千'];
   const cnIntUnits = ['', '万', '亿', '兆'];

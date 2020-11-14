@@ -83,3 +83,113 @@ export function createUniqueString(): string {
   const randomNum = parseInt(`${(1 + Math.random()) * 65536}`) + '';
   return (+(randomNum + timestamp)).toString(32);
 }
+
+/**
+ * @name 浮点数加法
+ * @param arg1
+ * @param arg2
+ */
+export function accAdd(arg1: number, arg2: number): number {
+  let r1, r2;
+  try {
+    r1 = arg1.toString().split('.')[1].length;
+  } catch (e) {
+    r1 = 0;
+  }
+
+  try {
+    r2 = arg2.toString().split('.')[1].length;
+  } catch (e) {
+    r2 = 0;
+  }
+  const c = Math.abs(r1 - r2);
+  const m = Math.pow(10, Math.max(r1, r2));
+  if (c > 0) {
+    const cm = Math.pow(10, c);
+    if (r1 > r2) {
+      arg1 = Number(arg1.toString().replace('.', ''));
+      arg2 = Number(arg2.toString().replace('.', '')) * cm;
+    } else {
+      arg1 = Number(arg1.toString().replace('.', '')) * cm;
+      arg2 = Number(arg2.toString().replace('.', ''));
+    }
+  } else {
+    arg1 = Number(arg1.toString().replace('.', ''));
+    arg2 = Number(arg2.toString().replace('.', ''));
+  }
+  return (arg1 + arg2) / m;
+}
+/**
+ * @name 浮点数减法
+ * @param arg1
+ * @param arg2
+ */
+export function accSubtr(arg1: number, arg2: number): number {
+  let r1, r2;
+  try {
+    r1 = arg1.toString().split('.')[1].length;
+  } catch (e) {
+    r1 = 0;
+  }
+  try {
+    r2 = arg2.toString().split('.')[1].length;
+  } catch (e) {
+    r2 = 0;
+  }
+  const m = Math.pow(10, Math.max(r1, r2));
+  //动态控制精度长度
+  const n = r1 >= r2 ? r1 : r2;
+  return Number(((arg1 * m - arg2 * m) / m).toFixed(n));
+}
+
+/**
+ * @name 浮点数乘法
+ * @param arg1
+ * @param arg2
+ */
+export function accMul(arg1: number, arg2: number): number {
+  let m = 0;
+  const s1 = arg1.toString(),
+    s2 = arg2.toString();
+  try {
+    m += s1.split('.')[1].length;
+  } catch (e) {
+    console.error('accMul Error: ', e);
+  }
+  try {
+    m += s2.split('.')[1].length;
+  } catch (e) {
+    console.error('accMul Error: ', e);
+  }
+  return (
+    (Number(s1.replace('.', '')) * Number(s2.replace('.', ''))) /
+    Math.pow(10, m)
+  );
+}
+
+/**
+ * @name 除法浮点运算
+ * @param arg1
+ * @param arg2
+ */
+export function accDiv(arg1: number, arg2: number): number {
+  let t1 = 0,
+    t2 = 0;
+  try {
+    const a = arg1.toString().split('.');
+    t1 = a.length > 1 ? a[1].length : 0;
+  } catch (e) {
+    throw new Error(e);
+  }
+
+  try {
+    const a = arg2.toString().split('.');
+    t2 = a.length > 1 ? a[1].length : 0;
+  } catch (e) {
+    throw new Error(e);
+  }
+
+  const r1 = Number(arg1.toString().replace('.', ''));
+  const r2 = Number(arg2.toString().replace('.', ''));
+  return (r1 / r2) * Math.pow(10, t2 - t1);
+}

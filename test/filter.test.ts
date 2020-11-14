@@ -1,4 +1,4 @@
-import { hideNickname, toThousandsString, numToChinese } from '../src/filter';
+import { hideNickname, toThousandsString, numToChinese, hidePhone } from '../src/filter';
 
 describe('filter.test hideNickname', () => {
   test('hideNickname test pass', () => {
@@ -6,6 +6,15 @@ describe('filter.test hideNickname', () => {
   });
   test('hideNickname test  pass', () => {
     expect(hideNickname('程')).toBe('程****');
+  });
+  test('hideNickname test  pass', () => {
+    expect(hideNickname('')).toBe('****');
+  });
+});
+
+describe('filter.test hidePhone', () => {
+  test('hidePhone test pass', () => {
+    expect(hidePhone('13027513027')).toBe('130****3027');
   });
 });
 
@@ -21,6 +30,12 @@ describe('filter.test toThousandsString', () => {
 describe('filter.test numToChinese', () => {
   test('numToChinese test pass', () => {
     expect(numToChinese(100000)).toBe('一十万');
+  });
+  test('numToChinese test pass', () => {
+    expect(numToChinese(0)).toBe('零');
+  });
+  test('numToChinese test pass', () => {
+    expect(numToChinese(10001.11)).toBe('一万零一点一一');
   });
   test('numToChinese test not pass', () => {
     expect(numToChinese(100000.11)).toBe('一十万点一一');

@@ -1,4 +1,4 @@
-import { getFileExtension, getfilesize, getFileNameByPath, createUniqueString, deepClone } from '../src/tool';
+import { getFileExtension, getfilesize, getFileNameByPath, createUniqueString, deepClone, accAdd, accSubtr, accMul, accDiv } from '../src/tool';
 
 describe('tool.test getFileExtension', () => {
   test('getFileExtension test pass', () => {
@@ -37,5 +37,21 @@ describe('tool.test getFileNameByPath', () => {
   });
   test('getfilesize Ext test pass', () => {
     expect(getFileNameByPath('/test/test/.斗破苍穹.mobi.text', true)).toBe('.斗破苍穹.mobi');
+  });
+});
+
+
+describe('tool.test acc', () => {
+  test('accAdd  test pass', () => {
+    expect(accAdd(0.1, 0.2)).toBe(0.3);
+  });
+  test('accSubtr  test pass', () => {
+    expect(accSubtr(0.5, 0.12)).toBe(0.38);
+  });
+  test('accMul  test pass', () => {
+    expect(accMul(0.113, 0.20)).toBe(0.0226);
+  });
+  test('accDiv  test pass', () => {
+    expect(accDiv(1.40, 7)).toBe(0.2);
   });
 });
