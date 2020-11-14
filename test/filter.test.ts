@@ -36,6 +36,12 @@ describe('filter.test translateHMS', () => {
     expect(translateHMS((48*3600 + 2*3600 + 10*60 + 20)*1000, 'dd天HH时mm分ss秒')).toBe('02天02时10分20秒');
   });
   test('translateHMS test pass', () => {
+    expect(translateHMS((1*3600 + 5*60 + 8)*1000, 'h小时m分钟s秒')).toBe('1小时5分钟8秒');
+  });
+  test('translateHMS test pass', () => {
+    expect(translateHMS((2*60 + 8)*1000, '总时长（分:秒） mm:ss')).toBe('总时长（分:秒） 02:08');
+  });
+  test('translateHMS test pass', () => {
     expect(translateHMS((2*3600 + 10*60 + 20)*1000)).toBe('00 02:10:20');
   });
 });
