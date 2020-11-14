@@ -1,3 +1,13 @@
+## [0.0.20](https://github.com/citrusjunoss/qzd-utils/compare/v0.0.19...v0.0.20) (2020-11-14)
+
+
+### Features
+
+* **filter:** add translateHMS method ([eb247f5](https://github.com/citrusjunoss/qzd-utils/commit/eb247f5b1dbe3483e209c2a4e5e578e8c39b5420))
+* **tool:** add acc calculation function, add,sub,mul,div ([5cef8d8](https://github.com/citrusjunoss/qzd-utils/commit/5cef8d86a8be224b10d0a19bb63e5a8508eb4172))
+
+
+
 ## [0.0.19](https://github.com/citrusjunoss/qzd-utils/compare/0.0.2...0.0.19) (2020-11-12)
 
 
