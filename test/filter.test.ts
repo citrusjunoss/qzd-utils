@@ -1,4 +1,4 @@
-import { hideNickname, toThousandsString, numToChinese, hidePhone } from '../src/filter';
+import { hideNickname, toThousandsString, numToChinese, translateHMS, hidePhone } from '../src/filter';
 
 describe('filter.test hideNickname', () => {
   test('hideNickname test pass', () => {
@@ -39,5 +39,18 @@ describe('filter.test numToChinese', () => {
   });
   test('numToChinese test not pass', () => {
     expect(numToChinese(100000.11)).toBe('一十万点一一');
+  });
+});
+
+
+describe('filter.test translateHMS', () => {
+  test('translateHMS test pass', () => {
+    expect(translateHMS((1*60 + 50) *1000, 'hh:mm:ss')).toBe('00:01:50');
+  });
+  test('translateHMS test pass', () => {
+    expect(translateHMS((48*3600 + 2*3600 + 10*60 + 20)*1000, 'dd天HH时mm分ss秒')).toBe('02天02时10分20秒');
+  });
+  test('translateHMS test pass', () => {
+    expect(translateHMS((2*3600 + 10*60 + 20)*1000)).toBe('00 02:10:20');
   });
 });

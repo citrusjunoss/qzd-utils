@@ -119,3 +119,49 @@ export function hideNickname(nickname: string): string {
   }
   return res;
 }
+
+/**
+ * @name 毫秒时长转时分秒 考虑业务场景 匹配模式最大到天
+ * @param duration 毫秒时长
+ * @param pattern  模板匹配 DD/dd表示天 HH/hh表示小时 MM/mm表示分钟 SS/ss秒
+ */
+export function translateHMS(
+  duration: number,
+  pattern = 'dd HH:mm:ss',
+): string {
+  const days = Math.floor(duration / (24 * 3600 * 1000)); // 计算出相差天数
+  const leave1 = duration % (24 * 3600 * 1000); // 计算天数后剩余的毫秒数
+  const hours = Math.floor(leave1 / (3600 * 1000)); // 计算相差小时数
+  const leave2 = leave1 % (3600 * 1000); // 计算小时数后剩余的毫秒数
+  const minutes = Math.floor(leave2 / (60 * 1000)); // 计算相差分钟数
+  const leave3 = leave2 % (60 * 1000); // 计算分钟数后剩余的毫秒数
+  const seconds = Math.round(leave3 / 1000);
+  const ds = String(days).length === 1 ? '0' + days : String(days);
+  const hs = String(hours).length === 1 ? '0' + hours : String(hours);
+  const ms = String(minutes).length === 1 ? '0' + minutes : String(minutes);
+  const ss = String(seconds).length === 1 ? '0' + seconds : String(seconds);
+
+  const exp = /d{1,2}|h{1,2}|m{1,2}|s{1,2}/gi;
+  return pattern.replace(exp, function (match): string {
+    switch (true) {
+      case match.toLocaleLowerCase() === 'd':
+        return String(days).slice(0, 1);
+      case match.toLocaleLowerCase() === 'dd':
+        return ds;
+      case match.toLocaleLowerCase() === 'h':
+        return String(hours).slice(0, 1);
+      case match.toLocaleLowerCase() === 'hh':
+        return hs;
+      case match.toLocaleLowerCase() === 'm':
+        return String(minutes).slice(0, 1);
+      case match.toLocaleLowerCase() === 'mm':
+        return ms;
+      case match.toLocaleLowerCase() === 's':
+        return String(seconds).slice(0, 1);
+      case match.toLocaleLowerCase() === 'ss':
+        return ss;
+      default:
+        return '';
+    }
+  });
+}
