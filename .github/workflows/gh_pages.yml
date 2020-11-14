@@ -1,4 +1,4 @@
-name: deploy gh_pages   
+name: deploy gh_pages
 on:
   push:
     # Sequence of patterns matched against refs/tags
@@ -14,8 +14,8 @@ jobs:
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
       - name: Build
         run: npm run doc
-     - name:  Copy Config
-        run: cp cp ./_config.yml ./docs/_config.yml
+      - name: Copy Config
+        run: cp ./_config.yml ./docs/_config.yml
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
