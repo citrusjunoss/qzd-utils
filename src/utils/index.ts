@@ -24,3 +24,7 @@ export function isConsecutive(str: string, isReverse = true): boolean {
   }
   return flag;
 }
+
+
+
+
