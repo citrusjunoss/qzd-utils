@@ -19,7 +19,6 @@
     "test": "jest",
     "build": "tsc",
     "lint": "eslint -c ./.eslintrc.json --fix --ext .json,.js,.ts,.tsx ./src",
-    "codecov": "codecov",
     "watch": "tsc -w && node lib/index.js",
     "start": "nodemon --config nodemon.json lib/index.js",
     "doc": "typedoc --out docs --excludePrivate",
@@ -37,11 +36,11 @@
     ]
   },
   "dependencies": {
-    "@types/js-md5": "^0.4.2",
     "js-md5": "^0.7.3",
     "js-sha1": "^0.6.0"
   },
   "devDependencies": {
+    "@types/js-md5": "^0.4.2",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
     "@microsoft/tsdoc": "^0.12.20",

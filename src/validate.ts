@@ -215,3 +215,23 @@ export function isPINum(num: string): boolean {
   const result = /^\+?[1-9][0-9]*$/.test(num);
   return result;
 }
+
+/**
+ * @name 是否object
+ * @param value
+ *  * isObject({})
+ * // => true
+ *
+ * isObject([1, 2, 3])
+ * // => true
+ *
+ * isObject(Function)
+ * // => true
+ *
+ * isObject(null)
+ * // => false
+ */
+export function isObject(value: any): boolean {
+  const type = typeof value;
+  return value != null && (type === 'object' || type === 'function');
+}
