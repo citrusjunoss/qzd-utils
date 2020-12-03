@@ -10,7 +10,7 @@ interface debounceOpt {
 export function debounce(
   func: () => void,
   wait: number,
-  options: debounceOpt,
+  options?: debounceOpt,
 ): () => any {
   let lastArgs: any,
     lastThis: any,
@@ -32,7 +32,7 @@ export function debounce(
     throw new TypeError('Expected a function');
   }
   wait = +wait || 0;
-  if (isObject(options)) {
+  if (isObject(options) && options) {
     leading = !!options.leading;
     maxing = 'maxWait' in options;
     maxWait = maxing ? Math.max(+options.maxWait || 0, wait) : 0;

@@ -193,3 +193,20 @@ export function accDiv(arg1: number, arg2: number): number {
   const r2 = Number(arg2.toString().replace('.', ''));
   return (r1 / r2) * Math.pow(10, t2 - t1);
 }
+
+/**
+ * @数组转换为二维数组 [1, 2, 3, 4] => [[1,2], [3,4]]
+ * @param arr
+ * @param num
+ */
+export function sliceToArray(arr: any[], num: number): any[] {
+  const res = [];
+  const len = arr.length;
+  // eslint-disable-next-line no-plusplus
+  for (let index = 0; index < len; index++) {
+    if (index % num === 0) {
+      res.push(arr.slice(index, index + num));
+    }
+  }
+  return res;
+}
