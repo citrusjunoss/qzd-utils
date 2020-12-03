@@ -2,15 +2,15 @@ import root from './utils/root';
 import { isObject } from './validate';
 
 interface debounceOpt {
-  leading: boolean;
-  maxWait: number;
-  trailing: boolean;
+  leading?: boolean;
+  maxWait?: number;
+  trailing?: boolean;
 }
 
 export function debounce(
-  func: () => void,
+  func: (...args: any) => any,
   wait: number,
-  options?: debounceOpt,
+  option?: debounceOpt,
 ): () => any {
   let lastArgs: any,
     lastThis: any,
@@ -23,6 +23,8 @@ export function debounce(
   let leading = false;
   let maxing = false;
   let trailing = true;
+
+  const options = { leading: false, maxWait: 0, trailing: true, ...{ option } };
 
   // Bypass `requestAnimationFrame` by explicitly setting `wait=0`.
   const useRAF =
@@ -163,17 +165,18 @@ export function debounce(
 }
 
 interface throttleOpt {
-  leading: boolean;
-  trailing: boolean;
+  leading?: boolean;
+  trailing?: boolean;
 }
 
 export function throttle(
-  func: () => void,
+  func: (...args: any) => any,
   wait: number,
-  options: throttleOpt,
+  option?: throttleOpt,
 ): () => any {
   let leading = true;
   let trailing = true;
+  const options = option || { leading: true, trailing: true };
 
   if (typeof func !== 'function') {
     throw new TypeError('Expected a function');
