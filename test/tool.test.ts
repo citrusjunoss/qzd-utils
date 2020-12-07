@@ -1,4 +1,4 @@
-import { getFileExtension, getfilesize, getFileNameByPath, createUniqueString, deepClone, accAdd, accSubtr, accMul, accDiv } from '../src/tool';
+import { getFileExtension, getfilesize, getFileNameByPath, createUniqueString, deepClone, accAdd, accSubtr, accMul, accDiv, sliceToArray } from '../src/tool';
 
 describe('tool.test getFileExtension', () => {
   test('getFileExtension test pass', () => {
@@ -53,5 +53,11 @@ describe('tool.test acc', () => {
   });
   test('accDiv  test pass', () => {
     expect(accDiv(1.40, 7)).toBe(0.2);
+  });
+});
+
+describe('tool.sliceToArray ', () => {
+  test('accAdd  sliceToArray pass', () => {
+    expect(sliceToArray([1, 2, 3, 4], 2)).toStrictEqual([[1, 2], [3, 4]]);
   });
 });

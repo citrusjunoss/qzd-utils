@@ -66,7 +66,6 @@ function decode(s: string) {
  */
 export function parseCookies(
   key: string,
-  json?: boolean,
   customCookies?: string,
   standard?: boolean,
 ): string | undefined {
@@ -80,22 +79,13 @@ export function parseCookies(
     const parts = cookies[i].split('=');
     let cookie = parts.slice(1).join('=');
 
-    if (!json && cookie.charAt(0) === '"') {
+    if (cookie.charAt(0) === '"') {
       cookie = cookie.slice(1, -1);
     }
 
     try {
       const name = decode(parts[0]);
       cookie = decode(cookie);
-
-      if (json) {
-        try {
-          cookie = JSON.parse(cookie);
-        } catch (e) {
-          console.error(e);
-        }
-      }
-
       jar[name] = cookie;
 
       if (key === name) {

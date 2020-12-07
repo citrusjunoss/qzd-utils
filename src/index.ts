@@ -10,3 +10,5 @@ export * from './tool';
 export * from './filter';
 // 浏览器环境
 export * from './env';
+// 防抖节流
+export * from './debounce';
