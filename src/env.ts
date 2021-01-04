@@ -11,6 +11,7 @@ type browserType =
   | 'webApp'
   | 'QQbrw'
   | 'weiXin'
+  | 'wxApp'
   | 'QQ'
   | 'weiBo'
   | 'ucLowEnd'
@@ -58,6 +59,7 @@ function allEnv(): {
     webApp: ua.indexOf('Safari') == -1, // 是否web应用程序，没有头部与底部
     QQbrw: ua.indexOf('MQQBrowser') > -1, // QQ浏览器(手机上的)
     weiXin: ua.indexOf('MicroMessenger') > -1, // 微信
+    wxApp: ua.indexOf('miniProgram') > -1, // 微信小程序
     QQ: (ualower.match(/\sQQ/i) as any) == ' qq', // QQ App内置浏览器（需要配合使用）
     weiBo: (ualower.match(/WeiBo/i) as any) == 'weibo', // 微博
     ucLowEnd: ua.indexOf('UCWEB7.') > -1, //
