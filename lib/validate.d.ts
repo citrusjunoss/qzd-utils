@@ -95,4 +95,20 @@ export declare function isFlotNum(str: string, num?: number, count?: number): bo
  * @param {*} num
  */
 export declare function isPINum(num: string): boolean;
+/**
+ * @name 是否object
+ * @param value
+ *  * isObject({})
+ * // => true
+ *
+ * isObject([1, 2, 3])
+ * // => true
+ *
+ * isObject(Function)
+ * // => true
+ *
+ * isObject(null)
+ * // => false
+ */
+export declare function isObject(value: any): boolean;
 export {};

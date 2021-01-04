@@ -28,3 +28,33 @@ export declare function deepClone<T>(obj: any | any, hash?: WeakMap<object, any>
  * @name 生成唯一字符串(伪唯一)
  */
 export declare function createUniqueString(): string;
+/**
+ * @name 浮点数加法
+ * @param arg1
+ * @param arg2
+ */
+export declare function accAdd(arg1: number, arg2: number): number;
+/**
+ * @name 浮点数减法
+ * @param arg1
+ * @param arg2
+ */
+export declare function accSubtr(arg1: number, arg2: number): number;
+/**
+ * @name 浮点数乘法
+ * @param arg1
+ * @param arg2
+ */
+export declare function accMul(arg1: number, arg2: number): number;
+/**
+ * @name 除法浮点运算
+ * @param arg1
+ * @param arg2
+ */
+export declare function accDiv(arg1: number, arg2: number): number;
+/**
+ * @数组转换为二维数组 [1, 2, 3, 4] => [[1,2], [3,4]]
+ * @param arr
+ * @param num
+ */
+export declare function sliceToArray(arr: any[], num: number): any[];
