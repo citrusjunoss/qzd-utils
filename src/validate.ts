@@ -181,9 +181,8 @@ export function isEmpty(str: any): boolean {
     (typeof str === 'string' && str.trim() == '')
   ) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 /**
  * @name  数据为空(包含null,undefined,空字符)
@@ -191,8 +190,8 @@ export function isEmpty(str: any): boolean {
  */
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function isEmptyObj(obj: any): boolean {
-  if (!obj) return false;
-  return !!Object.keys(obj).length;
+  if (isEmpty(obj)) return true;
+  return typeof obj === 'object' && Object.keys(obj).length === 0;
 }
 
 /**

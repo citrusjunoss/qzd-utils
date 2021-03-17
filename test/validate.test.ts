@@ -12,7 +12,8 @@ import {
   validatAlphabets,
   validateEmail,
   isQQ,
-  isIDCard
+  isIDCard,
+  isEmptyObj
 } from '../src/validate';
 
 describe('validate.test vailPassword', () => {
@@ -80,6 +81,26 @@ describe('validate.test isEmpty', () => {
   test('isEmpty test not pass', () => {
     expect(isEmpty(0)).toBe(false);
   });
+});
+
+describe('validate.test isEmptyObj', () => {
+  test('isEmptyObj test obj pass', () => {
+    expect(isEmptyObj({})).toBe(true);
+  });
+  test('isEmptyObj test arry pass', () => {
+    expect(isEmptyObj([])).toBe(true);
+  });
+  test('isEmpty test not pass', () => {
+    expect(isEmptyObj({a: 1})).toBe(false);
+  });
+  
+  test('isEmpty test not pass', () => {
+    expect(isEmptyObj(1)).toBe(false);
+  });
+  test('isEmpty test not pass', () => {
+    expect(isEmptyObj([1])).toBe(false);
+  });
+
 });
 describe('validate.test isFlotNum', () => {
   test('isFlotNum test pass', () => {
