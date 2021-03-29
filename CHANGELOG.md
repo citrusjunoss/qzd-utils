@@ -1,3 +1,12 @@
+## [0.0.25](https://github.com/citrusjunoss/qzd-utils/compare/v0.0.24...v0.0.25) (2021-03-17)
+
+
+### Bug Fixes
+
+* **validate:** isEmptyObj bug ([54247f8](https://github.com/citrusjunoss/qzd-utils/commit/54247f87a10e2b696350be4c221a7172c016ecfb))
+
+
+
 ## [0.0.24](https://github.com/citrusjunoss/qzd-utils/compare/v0.0.20...v0.0.24) (2021-01-04)
 
 

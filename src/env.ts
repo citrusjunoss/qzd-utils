@@ -53,7 +53,7 @@ function allEnv(): {
     gecko: ua.indexOf('Gecko') > -1 && ua.indexOf('KHTML') == -1, // 火狐内核
     mobile: !!ua.match(/AppleWebKit.*Mobile.*/) || !!ua.match(/AppleWebKit/), // 是否为移动终端
     ios: !!ua.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), // IOS终端
-    android: ua.indexOf('Android') > -1 || ua.indexOf('Mac') > -1, // 安卓终端
+    android: ua.indexOf('Android') > -1 || ua.indexOf('adr') > -1, // 安卓终端
     iPhone: ua.indexOf('iPhone') > -1 || ua.indexOf('Mac') > -1, // 是否为iphone或QQHD浏览器
     iPad: ua.indexOf('iPad') > -1, // 是否为iPad
     webApp: ua.indexOf('Safari') == -1, // 是否web应用程序，没有头部与底部
